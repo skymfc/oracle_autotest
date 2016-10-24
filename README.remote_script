@@ -1,0 +1,33 @@
+remote script is used for some operations between four nodes.
+Pre-Step:
+1.ssh password-less between four nodes.
+
+#ssh-copy-id -i [node_name]
+
+Functions:
+1.secure copy (remote file copy function)
+copy local files to remote foure nodes
+2.excute shell command
+excute commands on the four remote nodes
+3.excute script 
+excute local script on the four remote nodes
+4.excute shell command/script or copy to specify node
+
+
+command help:
+
+remoterun [-option] [file|command]
+-h,--help,print usage
+-c,--copy <file on local path>,copy local file to remote nodes
+-cmd,--command <shell command>,excute shell command on node list
+-s,--script <script_full_path>,excute local script on node list
+-n,--node ,It's used for after 3 option above is about just excute on specify node
+
+Will Improvement:
+1.store the node config, such as number of nodes and hostnames of nodes,For example:
+12cnode1,12cnode2,12cnode3,12cnode4
+We should get a array [4,hostname]
+And we should store the information in the config file,node.conf
+2.excute shell command/script or copy to specify node list
+we should offer more than one nodes to excute some commands or script.
+3.
